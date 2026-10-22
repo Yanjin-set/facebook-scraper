@@ -1,0 +1,51 @@
+# Credentials and private browser state, at any depth
+*cookie*
+*session*
+*token*
+*secret*
+credentials*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+chrome-profile/
+browser-profile/
+
+# Data is private by default, including custom output directories
+*.json
+*.csv
+*.jsonl
+*.txt
+!requirements.txt
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.mp4
+*.html
+fb_output/
+output/
+data/
+*.log
+*.part
+*.tmp
+
+# Local tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.idea/
+.vscode/
+.DS_Store
+desktop.ini
+Thumbs.db
+
+# Local tests are not part of the public version
+tests/
+test_*.py
+verify_*.py
