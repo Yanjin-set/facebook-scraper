@@ -1,10 +1,10 @@
 # Facebook 貼文蒐集工具
 
-擷取專頁貼文文字及圖片，可依關鍵字篩選，圖片按貼文分開存到本機。不下載影片。
+擷取專頁貼文文字及圖片，可依關鍵字篩選，圖片按貼文分開存到本機。程式不會下載影片。
 
 ## 使用方式
 
-需要 Python 與 Google Chrome。在此資料夾開啟終端機，先安裝套件：
+需要 Python與 Google Chrome。在此資料夾開啟終端機，先安裝套件：
 
 ```powershell
 python -m pip install -r requirements.txt
@@ -16,9 +16,9 @@ python -m pip install -r requirements.txt
 python fb_login.py
 ```
 
-在開啟的 Chrome 手動登入 Facebook，再回終端機按 Enter，儲存登入狀態。之後登入失效時，再執行一次即可。
+在開啟的 Chrome 手動登入 Facebook，再回終端機按 Enter，儲存登入 cookie (!程式不會截取帳號密碼!)。未來抓取皆將自動載入登入狀態，登入失效時，再執行一次即可。
 
-接著啟動蒐集程式，不用填任何參數：
+接著啟動蒐集程式，不需填任何參數：
 
 ```powershell
 python fb_scraper.py
@@ -45,7 +45,6 @@ python fb_scraper.py
 | `fb_download.py` | 圖片／全部模式時，自動下載圖片、重試並記錄結果 |
 | `fb_validation.py` | 自動整理完整性狀態及產生摘要，不是驗收腳本 |
 | `requirements.txt` | 安裝所需套件的清單 |
-| `.gitignore` | 告訴 Git 排除登入檔、蒐集結果與快取 |
 
 ## 執行效果
 
@@ -55,4 +54,3 @@ python fb_scraper.py
 - `images/post_000/` 等資料夾：各篇圖片、文字檔與下載紀錄（圖片／全部模式）。
 - `summary.json`：蒐集結果摘要；未確認完整時會標為 `partial`。
 
-請勿上傳登入檔 `fb_cookies.json` 或蒐集結果。僅蒐集獲准存取的資料；Facebook 版型可能變動，無法保證每篇都完整擷取。
